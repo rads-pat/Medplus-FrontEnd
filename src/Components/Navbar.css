@@ -1,0 +1,23 @@
+.navl{
+    margin: "10px";
+    padding: "10px";
+    font-size: "20px";
+}
+.pt_login, .pt_reg , .dr_login , .dr_reg {
+    border-radius: 10px;
+}
+.pt_login , .pt_reg , .dr_login , .dr_reg{
+    text-decoration: none;
+}
+.pt_login {background-color: rgb(33, 31, 31);} 
+.pt_login:hover:active {background: #0b7dda;} 
+
+.pt_reg {background-color: rgb(33, 31, 31);} 
+.pt_reg:hover:active {background: #0b7dda;} 
+
+.dr_login {background-color: rgb(33, 31, 31);} 
+.dr_login:hover:active {background: #0b7dda;} 
+
+.dr_reg{background-color: rgb(33, 31, 31);}
+.dr_reg:hover:active {background: #0b7dda;} 
+
