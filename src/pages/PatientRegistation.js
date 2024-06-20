@@ -31,65 +31,35 @@ const handleSubmit = async (e) => {
   console.log("user", user);
 
   try {
-    const response = await axios.post("http://localhost:5000/api/patient/addPatient", user, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    console.log("response", response.data);
+    const payload = {
+      patientName: user.patientName,
+      phoneNumber: user.phoneNumber,
+      gender:user.gender,
+      age:user.age,
+      dob:user.dob,
+      bloodGroup:user.bloodGroup,
+      email:user.email,
+      password:user.password,
+      address:user.address,
+    };
+    axios
+    .post("http://localhost:5000/api/patient/addPatient",payload)
+    .then((res) =>
+    console.log("res_fromPatientRegistration", res.data)
+    )
   } catch (error) {
-    console.log("register error", error);
+    console.log("register error",error)
   }
+  
+  
 };
 
-
-// useEffect(() => {
-//   const payload = {
-//     patientName: "Ankita Lokhande",
-//     phoneNumber:2123456,
-//     gender:"Female",
-//     age:40,
-//     dob:"01/05/1984",
-//     bloodGroup:"",
-//     email:"sanjana@gmail.com",
-//     password:"123456789",
-//     address:"Austria",
-//   }
-
-//   // const payload = {
-//   //   patientName: "",
-//   //   phoneNumber:"",
-//   //   gender:"",
-//   //   age:"",
-//   //   dob:"",
-//   //   bloodGroup:"",
-//   //   email:"",
-//   //   password:"",
-//   //   address:"",
-//   // };
-//   axios
-//   .post("http://localhost:5000/api/patient/addPatient",payload)
-//   .then((res) =>
-//   console.log("res_fromPatientRegistration", res.data)
-//   )
+ 
 
 
 // },[]);
 
 
-
-
-
-
-
-//handling the form submission
-
-// const handleSubmit = async (e) =>{
-//   e.preventDefault();
-//   // alert(user);
-//   console.log("user",user);
-
-// }
 
   return (
 
@@ -98,7 +68,7 @@ const handleSubmit = async (e) => {
 
         <form className="form" id="form" onSubmit={handleSubmit}>
           {/* <div className="form-control" > */}
-          <label htmlFor='patientName'>UserName : </label>&nbsp;<input type="text"  name="patientName" value={user.patientName} onChange={handleInput} placeholder="Enter Your Full Name"/><br />
+          <label>UserName : </label>&nbsp;<input type="text"  name="patientName" value={user.patientName} onChange={handleInput} placeholder="Enter Your Full Name"/><br />
           <br />
           <label>Phone Number : </label>&nbsp;<input type="number"  name="phoneNumber" value={user.phoneNumber} onChange={handleInput} placeholder="Enter Your Phone Number" /><br />
           <br />
